@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend-container
-        image: astraze/my_local_diary_back:23
+        image: astraze/my_local_diary_back:24
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
