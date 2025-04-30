@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: backend-kube
-  replicas: 1
+  replicas: 3
 
   template:
     metadata:
@@ -19,3 +19,34 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        env:
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: DB_USERNAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: DB_PASSWORD
+        - name: S3_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: S3_ACCESS_KEY
+        - name: S3_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: S3_SECRET_ACCESS_KEY
+        - name: REST_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: REST_API_KEY
+        - name: secret_key
+          valueFrom:
+            secretKeyRef:
+              name: my-local-diary-secret
+              key: secret_key
