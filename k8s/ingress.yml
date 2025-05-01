@@ -10,17 +10,17 @@ spec:
   rules:
   - http:
       paths:
-      - path: /()(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: frontend-svc
-            port: 
-              number: 8000
-      - path: /api(/|$)(.*)
+      - path: /api/
         pathType: ImplementationSpecific
         backend:
           service:
             name: backend-svc
             port: 
               number: 8001
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: frontend-svc
+            port: 
+              number: 8000
