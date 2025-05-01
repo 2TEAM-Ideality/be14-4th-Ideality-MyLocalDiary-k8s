@@ -16,11 +16,11 @@ spec:
           service:
             name: frontend-svc
             port: 
-              number: 5173
+              number: 8000
       - path: /api(/|$)(.*)
         pathType: ImplementationSpecific
         backend:
           service:
             name: backend-svc
             port: 
-              number: 8080
+              number: 8001
