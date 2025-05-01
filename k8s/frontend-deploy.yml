@@ -19,4 +19,4 @@ spec:
         image: astraze/my_local_diary_front:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 5173
