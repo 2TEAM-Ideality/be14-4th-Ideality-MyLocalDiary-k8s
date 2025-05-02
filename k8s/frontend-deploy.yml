@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: astraze/my_local_diary_front:11
+        image: astraze/my_local_diary_front:12
         imagePullPolicy: Always
         ports:
         - containerPort: 80
